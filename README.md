@@ -2,13 +2,13 @@
 
 **Pan-cancer Neoantigen Atlas and AI Screening System**
 
-A PyTorch-based toolkit for predicting HLA-I peptide presentation scores (EL, Expression Level) and deconvoluting multiple-allele (MA) mass-spectrometry data.
+A PyTorch-based toolkit for predicting HLA-I/II peptide presentation scores (EL, Expression Level) and deconvoluting multiple-allele (MA) mass-spectrometry data.
 
 ---
 
 ## Features
 
-- **EL Score Prediction** – Transformer-based model predicts the likelihood that a peptide is presented by a given HLA-I allele.
+- **EL Score Prediction** – Transformer-based model predicts the likelihood that a peptide is presented by a given HLA allele.
 - **MA Deconvolution** – Assigns peptides to their most likely presenting HLA allele(s) from multi-allele MS data, using either a simple winner-take-all or an optimized multi-restriction method.
 - **SQLite Cache** – Sharded, quantised prediction cache with WAL mode for fast incremental scoring.
 - **Batch Processing** – FASTA-based batch prediction with checkpointing and incremental cache support.
@@ -142,7 +142,7 @@ ImmuAtlas/
 │   ├── batch_el_pred.py        # Batch EL prediction CLI
 │   └── ma_deconvolute.py       # MA deconvolution CLI
 ├── data/                       # Bundled data
-│   ├── HLA_library3.tsv        # 16,024 HLA-I alleles + pseudo-sequences
+│   ├── HLA_library3.tsv        # ~16,000 HLA alleles + pseudo-sequences
 │   └── models/                 # Pre-trained weights (not in Git)
 ├── examples/                   # Example data & scripts
 │   ├── example_peptides.fasta
