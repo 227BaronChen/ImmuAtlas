@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "immuatlas"
+version = "1.0.0"
+description = "Pan-cancer Neoantigen Atlas and AI Screening System"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Baron Chen"},
+]
+keywords = ["neoantigen", "HLA", "peptide", "MHC", "immunology", "deep-learning"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0",
+    "pandas>=1.5",
+    "biopython>=1.80",
+    "numpy>=1.23",
+    "scikit-learn>=1.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "black", "isort"]
+
+[project.urls]
+Repository = "https://github.com/227BaronChen/ImmuAtlas"
+
+[tool.setuptools.packages.find]
+include = ["immuatlas*"]
+
+[tool.setuptools.package-data]
+immuatlas = ["../data/HLA_library3.tsv"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
